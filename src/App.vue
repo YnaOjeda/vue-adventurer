@@ -1,9 +1,11 @@
-<script setup lang="ts"></script>
-
 <template>
   <body>
-    Hello World
+    <Adventurer />
   </body>
 </template>
+
+<script setup lang="ts">
+import Adventurer from './components/Adventurer.vue';
+</script>
 
 <style scoped></style>
