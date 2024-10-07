@@ -12,23 +12,12 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 import { AppearanceBaseProp } from '../appearanceTypes';
-import { ColorFlag, EyebrowIDs, Eyebrows, EyebrowType } from './options';
+import { Eyebrows, EyebrowType } from '../../../constants/features/eyebrows';
+import { getSVGContent } from '../../../utils';
 
-const props = withDefaults(defineProps<AppearanceBaseProp<EyebrowType>>(), {
-  color: '#000',
-});
+const props = defineProps<AppearanceBaseProp<EyebrowType>>();
 
 const variantHTML = computed(() => {
-  const variantKey = props.variant ?? (EyebrowIDs[1] as EyebrowType);
-  const content = Eyebrows[variantKey];
-  const variantColor = isValidColor(props.color) ? props.color : '#000';
-
-  return content.replace(ColorFlag, variantColor);
+  return getSVGContent(Eyebrows, props.variant, props.color);
 });
-
-const isValidColor = (color: string): boolean => {
-  const testerElement = document.createElement('div');
-  testerElement.style.color = color;
-  return testerElement.style.color !== '';
-};
 </script>
