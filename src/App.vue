@@ -1,6 +1,6 @@
 <template>
   <body>
-    <Adventurer />
+    <Adventurer :size="200" />
   </body>
 </template>
 
