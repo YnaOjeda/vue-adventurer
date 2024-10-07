@@ -11,9 +11,9 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { AppearanceBaseProp } from '../appearanceTypes';
-import { Eyebrows, EyebrowType } from '../../../constants/features/eyebrows';
-import { getSVGContent } from '../../../utils';
+import { AppearanceBaseProp } from './appearanceTypes';
+import { Eyebrows, EyebrowType } from '../../constants/features/eyebrows';
+import { getSVGContent } from '../../utils';
 
 const props = defineProps<AppearanceBaseProp<EyebrowType>>();
 

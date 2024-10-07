@@ -1,13 +1,13 @@
 <template>
   <div>
-    <Face :size="size" color='white'/>
+    <Face :size="size" color="white" />
     <Eyebrow class="attribute-container" :size="size" variant="brow-4" />
   </div>
 </template>
 
 <script setup lang="ts">
-import Eyebrow from './appearance/Eyebrow/Eyebrow.vue';
-import Face from './appearance/Face.vue';
+import Eyebrow from './features/Eyebrow.vue';
+import Face from './features/Face.vue';
 
 type Props = {
   size: number;
