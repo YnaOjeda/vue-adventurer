@@ -11,11 +11,11 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { AppearanceBaseProp } from './appearanceTypes';
 import { Eyebrows, EyebrowType } from '../../constants/features/eyebrows';
+import { FeatureProps } from '../../constants/features';
 import { getSVGContent } from '../../utils';
 
-const props = defineProps<AppearanceBaseProp<EyebrowType>>();
+const props = defineProps<FeatureProps<EyebrowType>>();
 
 const variantHTML = computed(() => {
   return getSVGContent(Eyebrows, props.variant, props.color);

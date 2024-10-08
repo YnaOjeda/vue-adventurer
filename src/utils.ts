@@ -1,6 +1,4 @@
-import { FeatureType } from './constants/features/features';
-
-export const ColorFlag = 'replace_color_value' as const;
+import { FeatureType, ColorFlag } from './constants/features';
 
 export const isValidColor = (color: string = ''): boolean => {
   const testerElement = document.createElement('div');
@@ -19,6 +17,11 @@ export const getSVGContent = (
 
   if (!content) {
     return '';
+  }
+
+  if (!feature.defaultColor) {
+    // the feature does not accept a color prop, no need to process further
+    return content;
   }
 
   const variantColor = isValidColor(color) ? color : feature.defaultColor;
