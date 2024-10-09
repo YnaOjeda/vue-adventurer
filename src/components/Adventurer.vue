@@ -21,9 +21,6 @@ import {
 } from '../constants/features';
 import FeatureGenerator from './FeatureGenerator.vue';
 
-type Props = {
-  size: number;
-};
 const props = defineProps<AdventurerProps>();
 </script>
 
