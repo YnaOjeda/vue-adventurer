@@ -74,3 +74,15 @@ export const FeatureInfo = {
   [FeatureKey.earrings]: Earrings,
   [FeatureKey.hair]: Hair,
 } as Record<string, FeatureObject>;
+
+export const FeatureOptional = {
+  [FeatureKey.face]: false,
+  [FeatureKey.marking]: true,
+  [FeatureKey.mouth]: false,
+  [FeatureKey.eyes]: false,
+  [FeatureKey.brows]: false,
+  [FeatureKey.glasses]: true,
+  [FeatureKey.earrings]: true,
+  [FeatureKey.hair]: false,
+} as Record<FeatureType, boolean>;
+ 
