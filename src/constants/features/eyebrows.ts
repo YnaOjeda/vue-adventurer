@@ -22,4 +22,3 @@ export const Eyebrows = {
 
 export const EyebrowIDs = Object.keys(Eyebrows.variants);
 export type EyebrowType = keyof typeof Eyebrows.variants;
-export const ColorFlag = 'replace_color_value' as const;

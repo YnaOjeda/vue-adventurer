@@ -1,6 +1,6 @@
 <template>
   <body>
-    <Adventurer :size="200" />
+    <Adventurer :size="500" :brows="{ variant: 'brow-1' }" />
   </body>
 </template>
 

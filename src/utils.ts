@@ -1,4 +1,4 @@
-import { FeatureType, ColorFlag } from './constants/features';
+import { FeatureType, ColorFlag, FeatureInfo } from './constants/features';
 
 export const isValidColor = (color: string = ''): boolean => {
   const testerElement = document.createElement('div');
@@ -7,10 +7,15 @@ export const isValidColor = (color: string = ''): boolean => {
 };
 
 export const getSVGContent = (
-  feature: FeatureType,
+  featureKey: FeatureType,
   variantKey: string = '',
   color: string = ''
 ): string => {
+  const feature = FeatureInfo[featureKey];
+  if (!feature) {
+    return '';
+  }
+
   const content =
     feature?.variants?.[variantKey] ??
     feature?.variants?.[feature?.defaultVariant];

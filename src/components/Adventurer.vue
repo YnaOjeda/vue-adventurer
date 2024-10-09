@@ -1,19 +1,25 @@
 <template>
   <div>
-    <Face :size="size" :color="props.face?.color" />
-    <Eyebrow
-      class="attribute-container"
-      :size="size"
-      :variant="props.brows?.variant"
-      :color="props.brows?.color"
-    />
+    <div v-for="key in FeatureKeys" :key="`adventurer-${key}`">
+      <FeatureGenerator
+        class="attribute-container"
+        style="z-index: key + 1"
+        :size="size"
+        :feature-key="key as FeatureType"
+        :variant=" props[key as FeatureType]?.variant"
+        :color=" props[key as FeatureType]?.color"
+      />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import Eyebrow from './features/Eyebrow.vue';
-import Face from './features/Face.vue';
-import { AdventurerProps } from '../constants/features';
+import {
+  AdventurerProps,
+  FeatureKeys,
+  FeatureType,
+} from '../constants/features';
+import FeatureGenerator from './FeatureGenerator.vue';
 
 type Props = {
   size: number;
