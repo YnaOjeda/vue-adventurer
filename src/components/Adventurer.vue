@@ -2,6 +2,7 @@
   <div>
     <template v-for="key in FeatureKeys" :key="`adventurer-${key}`">
       <FeatureGenerator
+        :key="`adventurer_${key}`"
         v-if="!FeatureOptional[key as FeatureType] || props[key as FeatureType]"
         class="attribute-container"
         style="z-index: key + 1"
