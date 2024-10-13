@@ -20,7 +20,7 @@ export type FeatureBaseProps<T = string> = {
   variant?: T;
 };
 
-export type FeatureType = keyof typeof FeatureKey;
+export type FeatureType = (typeof FeatureKey)[keyof typeof FeatureKey];
 
 export type FeatureProps<T = string> = FeatureBaseProps<T> & {
   size: number;
@@ -51,7 +51,7 @@ export const FeatureKey = {
   glasses: 'glasses',
   earrings: 'earrings',
   hair: 'hair',
-};
+} as const;
 // The order matters and will determine which is displayed on top
 export const FeatureKeys = [
   FeatureKey.face,
@@ -62,7 +62,7 @@ export const FeatureKeys = [
   FeatureKey.glasses,
   FeatureKey.earrings,
   FeatureKey.hair,
-];
+] as const;
 
 export const FeatureInfo = {
   [FeatureKey.face]: Faces,
