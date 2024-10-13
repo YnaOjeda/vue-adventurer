@@ -1,5 +1,7 @@
 import { FeatureType, ColorFlag, FeatureInfo } from './constants/features';
 
+const ColorFlagRegEx = new RegExp(ColorFlag, 'g');
+
 export const isValidColor = (color: string = ''): boolean => {
   const testerElement = document.createElement('div');
   testerElement.style.color = color ?? '';
@@ -30,5 +32,5 @@ export const getSVGContent = (
   }
 
   const variantColor = isValidColor(color) ? color : feature.defaultColor;
-  return content.replace(ColorFlag, variantColor);
+  return content.replace(ColorFlagRegEx, variantColor);
 };
