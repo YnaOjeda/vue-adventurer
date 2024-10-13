@@ -83,6 +83,5 @@ export const FeatureOptional = {
   [FeatureKey.brows]: false,
   [FeatureKey.glasses]: true,
   [FeatureKey.earrings]: true,
-  [FeatureKey.hair]: false,
+  [FeatureKey.hair]: true,
 } as Record<FeatureType, boolean>;
- 
