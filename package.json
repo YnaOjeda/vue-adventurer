@@ -1,13 +1,46 @@
 {
   "name": "vue-adventurer",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "files": [
+    "dist",
+    "src/components/"
+  ],
+  "version": "0.0.1",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YnaOjeda/vue-adventurer"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "avatar",
+    "avatar-maker",
+    "avatar-creator",
+    "character-maker",
+    "face-creator"
+  ],
+  "main": "./dist/vue-adventurer.umd.cjs",
+  "module": "./dist/vue-adventurer.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-adventurer.js",
+      "require": "./dist/vue-adventurer.umd.cjs"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "test": "vitest run --config ./vitest.config.ts",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
   },
   "dependencies": {
     "vue": "^3.5.10"
