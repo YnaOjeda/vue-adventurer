@@ -7,7 +7,7 @@ An avatar vue component based on Lisa Wischofsky's [Adventurer Library](https://
 ```javascript
   <Adventurer
     :size="500"
-    :eyes="{variant: 'eye-1', color: "#A9A9A9"}"
+    :eyes="{variant: 'eye-1', color: '#A9A9A9'}"
   />
 ```
 
