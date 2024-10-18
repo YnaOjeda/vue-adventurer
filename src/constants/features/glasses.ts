@@ -10,4 +10,4 @@ export const Glasses = {
   defaultColor: '#101010',
 };
 
-export type GlassesType = keyof typeof Glasses;
+export type GlassesType = keyof typeof Glasses.variants;
