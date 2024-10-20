@@ -6,15 +6,17 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "allowJs": true,
+    "declaration": true,
 
     /* Bundler mode */
     "moduleResolution": "Node",
     "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "moduleDetection": "force",
-    "noEmit": true,
+    "outDir": "dist",
     "jsx": "preserve",
 
     /* Linting */
