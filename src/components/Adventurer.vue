@@ -29,15 +29,3 @@ import FeatureGenerator from './FeatureGenerator.vue';
 
 const props = defineProps<AdventurerProps>();
 </script>
-
-<style scoped>
-.feature-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.adventurer-container {
-  position: 'relative';
-  aspectratio: 1;
-}
-</style>
