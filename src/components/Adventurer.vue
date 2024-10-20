@@ -1,9 +1,8 @@
 <template>
   <div
+    class="adventurer-container"
     :style="{
-      position: 'relative',
       width: `${size}px`,
-      aspectRatio: 1,
     }"
   >
     <template v-for="(key, index) in FeatureKeys" :key="`adventurer-${key}`">
@@ -11,7 +10,7 @@
         :key="`adventurer_${key}`"
         v-if="!FeatureOptional[key as FeatureType] || props[key as FeatureType]"
         :size="size"
-        class="attribute-container"
+        class="feature-container"
         :style="{ zIndex: index + 1 }"
         :feature-key="key as FeatureType"
         :variant="props[key as FeatureType]?.variant"
@@ -34,9 +33,13 @@ const props = defineProps<AdventurerProps>();
 </script>
 
 <style scoped>
-.attribute-container {
+.feature-container {
   position: absolute;
   top: 0;
   left: 0;
+}
+.adventurer-container {
+  position: 'relative';
+  aspectratio: 1;
 }
 </style>
