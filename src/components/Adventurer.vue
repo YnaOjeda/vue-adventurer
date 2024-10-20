@@ -1,12 +1,18 @@
 <template>
-  <div>
-    <template v-for="key in FeatureKeys" :key="`adventurer-${key}`">
+  <div
+    :style="{
+      position: 'relative',
+      width: `${size}px`,
+      aspectRatio: 1,
+    }"
+  >
+    <template v-for="(key, index) in FeatureKeys" :key="`adventurer-${key}`">
       <FeatureGenerator
         :key="`adventurer_${key}`"
         v-if="!FeatureOptional[key as FeatureType] || props[key as FeatureType]"
-        class="attribute-container"
-        style="z-index: key + 1"
         :size="size"
+        class="attribute-container"
+        :style="{ zIndex: index + 1 }"
         :feature-key="key as FeatureType"
         :variant="props[key as FeatureType]?.variant"
         :color="props[key as FeatureType]?.color"
