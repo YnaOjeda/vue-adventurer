@@ -23,7 +23,6 @@ export type FeatureBaseProps<T = string> = {
 export type FeatureType = (typeof FeatureKey)[keyof typeof FeatureKey];
 
 export type FeatureProps<T = string> = FeatureBaseProps<T> & {
-  size: number;
   featureKey: FeatureType;
 };
 

@@ -1,23 +1,21 @@
 <template>
-  <div
-    class="adventurer-container"
-    :style="{
-      width: `${size}px`,
-    }"
+  <svg
+    :height="size"
+    :width="size"
+    viewBox="0 0 1024 1024"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
   >
-    <template v-for="(key, index) in FeatureKeys" :key="`adventurer-${key}`">
+    <template v-for="key in FeatureKeys" :key="`adventurer-${key}`">
       <FeatureGenerator
-        :key="`adventurer_${key}`"
         v-if="!FeatureOptional[key as FeatureType] || props[key as FeatureType]"
-        :size="size"
-        class="feature-container"
-        :style="{ zIndex: index + 1 }"
+        :key="`adventurer-feature-${key}`"
         :feature-key="key as FeatureType"
         :variant="props[key as FeatureType]?.variant"
         :color="props[key as FeatureType]?.color"
       />
     </template>
-  </div>
+  </svg>
 </template>
 
 <script setup lang="ts">
