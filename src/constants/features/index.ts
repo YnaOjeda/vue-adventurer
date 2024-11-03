@@ -27,7 +27,7 @@ export type FeatureProps<T = string> = FeatureBaseProps<T> & {
 };
 
 export type AdventurerProps = {
-  size: number;
+  size: number | string;
   earrings?: FeatureBaseProps<EaringType>;
   brows?: FeatureBaseProps<EyebrowType>;
   eyes?: FeatureBaseProps<EyeType>;
