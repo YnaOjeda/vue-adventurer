@@ -22,9 +22,9 @@
   ],
   "main": "./dist/vue-adventurer.umd.cjs",
   "module": "./dist/vue-adventurer.js",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/vue-adventurer.js",
       "require": "./dist/vue-adventurer.umd.cjs"
     },
