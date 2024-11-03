@@ -24,7 +24,7 @@ import {
   FeatureKeys,
   FeatureOptional,
   FeatureType,
-} from '../constants/features';
+} from '@/constants/features';
 import FeatureGenerator from './FeatureGenerator.vue';
 
 const props = defineProps<AdventurerProps>();
