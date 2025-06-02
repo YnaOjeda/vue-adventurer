@@ -8,7 +8,7 @@
   >
     <template v-for="key in FeatureKeys" :key="`adventurer-${key}`">
       <FeatureGenerator
-        v-if="!FeatureOptional[key as FeatureType] || props[key as FeatureType]"
+        v-if="!FeatureOptional[key as FeatureType] || props[key as FeatureType]?.variant"
         :key="`adventurer-feature-${key}`"
         :feature-key="key as FeatureType"
         :variant="props[key as FeatureType]?.variant"

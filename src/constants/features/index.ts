@@ -1,4 +1,4 @@
-import { EaringType, Earrings } from './earrings';
+import { EarringType, Earrings } from './earrings';
 import { Eyebrows, EyebrowType } from './eyebrows';
 import { Eyes, EyeType } from './eyes';
 import { Faces } from './face';
@@ -7,13 +7,13 @@ import { Hair, HairType } from './hair';
 import { Markings, MarkingType } from './markings';
 import { Mouths, MouthType } from './mouth';
 
+// TYPES
+
 // Object that holds the svg content of each feature variant
 export type FeatureObject = {
   variants: Record<string, string>;
-  defaultVariant: string;
-  // When the default color is undefined
-  // it means that the feature does not accept color variantions
-  defaultColor?: string;
+  defaultVariant?: string; // If undefined, then the feature is optional
+  defaultColor?: string; // if undefined, then it does not accept color variations
 };
 export type FeatureBaseProps<T = string> = {
   color?: string;
@@ -28,7 +28,7 @@ export type FeatureProps<T = string> = FeatureBaseProps<T> & {
 
 export type AdventurerProps = {
   size: number | string;
-  earrings?: FeatureBaseProps<EaringType>;
+  earrings?: FeatureBaseProps<EarringType>;
   brows?: FeatureBaseProps<EyebrowType>;
   eyes?: FeatureBaseProps<EyeType>;
   glasses?: FeatureBaseProps<GlassesType>;
@@ -38,7 +38,7 @@ export type AdventurerProps = {
   face?: FeatureBaseProps;
 };
 
-// Marker for text to be replace with color in svg content
+// Marker for text to be replaced with color in svg content
 export const ColorFlag = 'replace_color_value' as const;
 // Keys of expected props for features
 export const FeatureKey = {
@@ -51,6 +51,9 @@ export const FeatureKey = {
   earrings: 'earrings',
   hair: 'hair',
 } as const;
+
+// CONSTANTS
+
 // The order matters and will determine which is displayed on top
 export const FeatureKeys = [
   FeatureKey.face,

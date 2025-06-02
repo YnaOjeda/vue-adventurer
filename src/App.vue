@@ -35,11 +35,11 @@ const mouth = ref<AdventurerProps['mouth']>({
   variant: 'mouth-30',
 });
 const eyes = ref<AdventurerProps['eyes']>({
-  variant: 'eye-7',
+  variant: 'eyes-7',
   color: EyeColor['eye-green-1'],
 });
 const brows = ref<AdventurerProps['brows']>({
-  variant: 'brow-1',
+  variant: 'brows-1',
   color: HairColor['hair-grey-1'],
 });
 const glasses = ref<AdventurerProps['glasses']>({
@@ -47,7 +47,7 @@ const glasses = ref<AdventurerProps['glasses']>({
   color: EyeGlassesColor['glasses-blue-1'],
 });
 const earrings = ref<AdventurerProps['earrings']>({
-  variant: 'earring-2',
+  variant: 'earrings-2',
 });
 const hair = ref<AdventurerProps['hair']>({
   variant: 'hair-37',
