@@ -1,6 +1,8 @@
 # vue-adventurer
 
-An avatar vue component based on Lisa Wischofsky's [Adventurer Library](https://www.figma.com/community/file/1184595184137881796)
+An avatar vue component based on Lisa Wischofsky's [Adventurer Library](https://www.figma.com/community/file/1184595184137881796).
+
+🔗 [See demo here](https://ynaojeda.github.io/vue-adventurer-maker/).
 
 # Usage
 
