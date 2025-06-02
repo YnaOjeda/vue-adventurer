@@ -3,7 +3,7 @@ import { getSVGContent, isValidColor } from '../../utils';
 import {
   ColorFlag,
   FeatureInfo,
-  FeatureKeys,
+  FeatureKeys, FeatureOptional,
   FeatureType,
 } from '../../constants/features';
 
@@ -14,11 +14,13 @@ describe('getSVGContent', () => {
   });
 
   it('should return the default variant content if variantKey is invalid', () => {
-    // This also ensures that default variants are defined in all Feature Objects
+    // If a feature is not optional, ti should always have a default value
     FeatureKeys.forEach((key) => {
-      expect(getSVGContent(key as FeatureType, 'invalidVariantKey')).not.toBe(
-        ''
-      );
+      if (!FeatureOptional[key]) {
+        expect(getSVGContent(key as FeatureType, 'invalidVariantKey')).not.toBe(
+            ''
+        );
+      }
     });
   });
 
