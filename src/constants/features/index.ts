@@ -12,7 +12,7 @@ import { Mouths, MouthType } from './mouth';
 // Object that holds the svg content of each feature variant
 export type FeatureObject = {
   variants: Record<string, string>;
-  defaultVariant: string;
+  defaultVariant?: string; // If undefined, then the feature is optional
   defaultColor?: string; // if undefined, then it does not accept color variations
 };
 export type FeatureBaseProps<T = string> = {

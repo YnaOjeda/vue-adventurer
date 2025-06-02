@@ -20,7 +20,7 @@ export const getSVGContent = (
 
   const content =
     feature?.variants?.[variantKey] ??
-    feature?.variants?.[feature?.defaultVariant];
+    feature?.variants?.[feature?.defaultVariant ?? ''];
 
   if (!content) {
     return '';
